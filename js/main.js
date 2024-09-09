@@ -213,3 +213,7 @@ function bodyScrollingToggle() {
         sliderContainer.style.marginLeft = -(slideWidth * slideIndex) + "px";
     }
 })();
+
+(()=> {
+    
+})
