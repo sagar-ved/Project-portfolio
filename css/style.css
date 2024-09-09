@@ -73,10 +73,13 @@ global style
  }
  
  .row {
+    width: 100%;
      display: flex;
      flex-wrap: wrap;
  }
- 
+ .copyright-text{
+    text-align: center;
+ }
  .justify-content-between {
      justify-content: space-between;
  }
@@ -1366,7 +1369,7 @@ portfolio popup
  }
  
  .contact-section .input-group {
-     margin: 0 0 25%;
+     margin: 0 0 5%;
      transition: all 0.3s ease;
      border-radius: 30px;
  }
