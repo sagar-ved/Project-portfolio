@@ -37,6 +37,9 @@ jobs:
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        env:
+          WEBHOOK_KEY: ${{ secrets.WEBHOOK_KEY }}
+          WEBHOOK_TOKEN: ${{ secrets.WEBHOOK_TOKEN}}
 
   # Deployment job
   deploy:
