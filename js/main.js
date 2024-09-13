@@ -214,6 +214,37 @@ function bodyScrollingToggle() {
     }
 })();
 
-(()=> {
+async function submitForm() {
+    event.preventDefault();
+    // Get form values
+    const fullName = document.getElementById("fullName").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+
+    // Create the payload for Google Workspace Chat webhook
+    const chatMessage = {
+        "text": `New form submission:\n\nFull Name: ${fullName}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`
+    };
+
+    // Send the form data to Google Chat webhook
+    await fetch("https://chat.googleapis.com/v1/spaces/AAAAKrICgCg/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=6ZTmdxAXrE05-FG3YFaVJWJE5EXwMdVKh3ragY8RRBU", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(chatMessage)
+    })
+    .then(response => {
+        if (response.ok) {
+            document.getElementById("statusMessage").innerText = "Form submitted successfully!";
+        } else {
+            document.getElementById("statusMessage").innerText = "Error submitting form.";
+        }
+    })
+    .catch(error => {
+        document.getElementById("statusMessage").innerText = "Error: " + error;
+    });
     
-})
+}
+// setTimeout(submitForm(),50000);

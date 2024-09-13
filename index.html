@@ -767,28 +767,31 @@
                             <div class="row">
                                 <div class="w-50">
                                     <div class="input-group outer-shadow hover-in-shadow">
-                                        <input type="text" placeholder="Name" class="input-control">
+                                        <input type="text" placeholder="Name" class="input-control" id="fullName">
                                     </div>
                                     <div class="input-group outer-shadow hover-in-shadow">
-                                        <input type="text" placeholder="Email" class="input-control">
+                                        <input type="text" placeholder="Email" class="input-control" id="email">
                                     </div>
                                     <div class="input-group outer-shadow hover-in-shadow">
-                                        <input type="text" placeholder="Subject" class="input-control">
+                                        <input type="text" placeholder="Subject" class="input-control" id="subject">
                                     </div>
                                 </div>
                                 <div class="w-50">
                                     <div class="input-group outer-shadow hover-in-shadow">
-                                        <textarea class="input-control" placeholder="Message"></textarea>
+                                        <textarea class="input-control" placeholder="Message" id="message"></textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="submit-btn">
-                                    <button type="submit" class="btn-1 outer-shadow hover-in-shadow">Send
+                                    <button type="submit" class="btn-1 outer-shadow hover-in-shadow"  onclick="submitForm()">Send
                                         Message</button>
                                 </div>
                             </div>
                         </form>
+                        <div id="statusMessage">
+                            
+                        </div>
                     </div>
                 </div>
             </div>
