@@ -1,0 +1,531 @@
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+/* Base responsive utilities */
+.container {
+    padding: 0 1rem;
+}
+
+/* ===================================
+   MOBILE FIRST - BASE STYLES (≤480px)
+   =================================== */
+
+/* Header responsive */
+.header {
+    padding: 1rem;
+}
+
+.header .logo {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.header .logo a {
+    height: 2.5rem;
+    width: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 1.25rem;
+}
+
+.header .hamburger-btn {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+/* Navigation responsive */
+.nav-menu ul {
+    padding: 1rem;
+}
+
+.nav-menu ul li a {
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+    padding: 0.5rem 1.5rem;
+}
+
+.nav-menu .copyright-text {
+    display: none;
+}
+
+/* Home section responsive */
+.home-section .full-screen {
+    padding: 2rem 0;
+    min-height: 100vh;
+}
+
+.home-section .home-text,
+.home-section .home-img {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.home-section .home-img {
+    order: -1;
+    margin-bottom: 3rem;
+}
+
+.home-section .home-img .img-box {
+    max-width: min(300px, 70vw);
+}
+
+/* About section responsive */
+.about-section {
+    padding: 3rem 0;
+}
+
+.about-section .about-img,
+.about-section .about-info {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 2rem;
+}
+
+.about-section .about-img {
+    text-align: center;
+}
+
+.about-section .about-img .img-box {
+    max-width: min(300px, 70vw);
+    margin: 0 auto;
+}
+
+.about-section .about-tabs {
+    padding: 2rem 1rem;
+}
+
+.about-section .about-tabs .tab-item {
+    font-size: clamp(0.875rem, 3vw, 1rem);
+    margin: 0.25rem;
+    padding: 0.5rem 1rem;
+}
+
+/* Skills responsive */
+.about-section .skills .skill-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* Timeline responsive */
+.about-section .timeline:before {
+    left: 2rem;
+}
+
+.about-section .timeline .timeline-item {
+    padding: 0 1rem 0 4rem;
+}
+
+.about-section .timeline .timeline-item:nth-child(odd),
+.about-section .timeline .timeline-item:nth-child(even) {
+    padding-left: 4rem;
+    padding-right: 1rem;
+}
+
+.about-section .timeline .timeline-item-inner:before {
+    display: none;
+}
+
+.about-section .timeline .timeline-item:nth-child(odd) .icon,
+.about-section .timeline .timeline-item:nth-child(even) .icon {
+    left: -2.5rem;
+}
+
+.about-section .education,
+.about-section .experience {
+    padding: 2rem 0;
+}
+
+/* Service section responsive */
+.service-section {
+    padding: 3rem 0;
+}
+
+.service-section .service-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* Portfolio section responsive */
+.portfolio-section {
+    padding: 3rem 0;
+}
+
+.portfolio-section .portfolio-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 2rem;
+}
+
+.portfolio-section .filter-item {
+    font-size: clamp(0.875rem, 3vw, 1rem);
+    margin: 0.25rem;
+    padding: 0.5rem 1rem;
+}
+
+/* Portfolio popup responsive */
+.portfolio-popup .pp-main {
+    width: 95%;
+}
+
+.portfolio-popup .pp-details {
+    width: calc(95% + 30px);
+}
+
+.portfolio-popup .description,
+.portfolio-popup .info {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 2rem;
+}
+
+.portfolio-popup .pp-prev,
+.portfolio-popup .pp-next {
+    display: none;
+}
+
+/* Testimonial responsive */
+.testimonial-section {
+    padding: 3rem 0;
+}
+
+.testimonial-section .testi-box {
+    max-width: 100%;
+    padding: 0 1rem;
+}
+
+/* Contact section responsive */
+.contact-section {
+    padding: 3rem 0;
+}
+
+.contact-section .contact-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 2rem;
+}
+
+.contact-section .w-50 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+}
+
+.contact-section .input-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-section .submit-btn {
+    text-align: center;
+}
+
+/* Effects responsive */
+.effect-wrap .effect {
+    display: none;
+}
+
+/* ===================================
+   TABLET STYLES (481px - 1024px)
+   =================================== */
+
+@media (min-width: 481px) {
+    .container {
+        padding: 0 2rem;
+    }
+
+    /* Header */
+    .header .logo a {
+        height: 3rem;
+        width: 3rem;
+        line-height: 3rem;
+        font-size: 1.5rem;
+    }
+
+    .header .hamburger-btn {
+        height: 3rem;
+        width: 3rem;
+    }
+
+    /* Home section */
+    .home-section .home-text,
+    .home-section .home-img {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .home-section .home-text {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .home-section .home-img {
+        order: 0;
+        margin-bottom: 0;
+    }
+
+    .home-section .home-img .img-box {
+        max-width: min(400px, 80vw);
+    }
+
+    /* About section */
+    .about-section .about-img {
+        flex: 0 0 40%;
+        max-width: 40%;
+        margin-bottom: 0;
+    }
+
+    .about-section .about-info {
+        flex: 0 0 60%;
+        max-width: 60%;
+        margin-bottom: 0;
+    }
+
+    /* Skills */
+    .about-section .skills .skill-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    /* Timeline */
+    .about-section .timeline:before {
+        left: 50%;
+    }
+
+    .about-section .timeline .timeline-item {
+        padding: 0 1rem;
+    }
+
+    .about-section .timeline .timeline-item:nth-child(odd) {
+        padding-right: calc(50% + 50px);
+        padding-left: 1rem;
+    }
+
+    .about-section .timeline .timeline-item:nth-child(even) {
+        padding-left: calc(50% + 50px);
+        padding-right: 1rem;
+    }
+
+    .about-section .timeline .timeline-item-inner:before {
+        display: block;
+    }
+
+    .about-section .timeline .timeline-item:nth-child(odd) .icon {
+        right: -70px;
+        left: auto;
+    }
+
+    .about-section .timeline .timeline-item:nth-child(even) .icon {
+        left: -70px;
+    }
+
+    /* Services */
+    .service-section .service-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    /* Portfolio */
+    .portfolio-section .portfolio-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    /* Portfolio popup */
+    .portfolio-popup .pp-prev,
+    .portfolio-popup .pp-next {
+        display: block;
+    }
+
+    /* Contact */
+    .contact-section .contact-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .contact-section .w-50 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    /* Show some effects */
+    .effect-wrap .effect-1,
+    .effect-wrap .effect-3 {
+        display: block;
+    }
+}
+
+/* ===================================
+   TABLET LANDSCAPE & SMALL DESKTOP (769px - 1024px)
+   =================================== */
+
+@media (min-width: 769px) {
+    /* Services */
+    .service-section .service-item {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+    }
+
+    /* Portfolio */
+    .portfolio-section .portfolio-item {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+    }
+
+    /* Contact */
+    .contact-section .contact-item {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+    }
+
+    /* Portfolio popup */
+    .portfolio-popup .description {
+        flex: 0 0 65%;
+        max-width: 65%;
+    }
+
+    .portfolio-popup .info {
+        flex: 0 0 35%;
+        max-width: 35%;
+        margin-bottom: 0;
+    }
+
+    /* Show more effects */
+    .effect-wrap .effect-2,
+    .effect-wrap .effect-4 {
+        display: block;
+    }
+}
+
+/* ===================================
+   DESKTOP STYLES (1025px+)
+   =================================== */
+
+@media (min-width: 1025px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    /* Show copyright text in nav */
+    .nav-menu .copyright-text {
+        display: block;
+    }
+
+    /* Show all effects */
+    .effect-wrap .effect {
+        display: block;
+    }
+
+    /* Larger home image */
+    .home-section .home-img .img-box {
+        max-width: 450px;
+    }
+}
+
+/* ===================================
+   LANDSCAPE ORIENTATION FIXES
+   =================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .home-section .full-screen {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+
+    .about-section,
+    .service-section,
+    .portfolio-section,
+    .testimonial-section,
+    .contact-section {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+
+    .nav-menu .copyright-text {
+        display: none;
+    }
+}
+
+/* ===================================
+   UTILITY CLASSES
+   =================================== */
+
+.text-center-mobile {
+    text-align: center;
+}
+
+@media (min-width: 769px) {
+    .text-center-mobile {
+        text-align: left;
+    }
+}
+
+/* ===================================
+   ACCESSIBILITY & TOUCH IMPROVEMENTS
+   =================================== */
+
+@media (max-width: 1024px) {
+    /* Larger touch targets */
+    .btn-1 {
+        min-height: 44px;
+        padding: 0.75rem 2rem;
+    }
+
+    .header .hamburger-btn,
+    .nav-menu .close-nav-menu {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .about-section .about-tabs .tab-item {
+        min-height: 44px;
+        line-height: 1.2;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Better spacing for touch */
+    .about-section .about-img .social-links a {
+        margin: 0 0.5rem;
+        height: 44px;
+        width: 44px;
+        line-height: 44px;
+    }
+
+    /* Form improvements */
+    .contact-section .input-control {
+        min-height: 44px;
+        font-size: 1rem;
+    }
+
+    .contact-section .input-group textarea.input-control {
+        min-height: 120px;
+    }
+}
+
+/* ===================================
+   PRINT STYLES
+   =================================== */
+
+@media print {
+    .header,
+    .nav-menu,
+    .effect-wrap,
+    .portfolio-popup,
+    .contact-section .contact-form {
+        display: none;
+    }
+
+    .section {
+        page-break-inside: avoid;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+}

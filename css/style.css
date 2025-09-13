@@ -67,9 +67,10 @@ global style
  }
  
  .container {
-     max-width: 1140px;
+    max-width: min(1140px, 95vw);
      /*background-color:red;*/
      margin: auto;
+    padding: 0 1rem;
  }
  
  .row {
@@ -77,6 +78,7 @@ global style
      display: flex;
      flex-wrap: wrap;
  }
+
  .copyright-text{
     text-align: center;
  }
@@ -265,7 +267,7 @@ global style
  
  .section-title h2 {
      display: inline-block;
-     font-size: 30px;
+    font-size: clamp(1.5rem, 5vw, 1.875rem);
      font-weight: 700;
      color: var(--text-black-900);
      text-transform: uppercase;
@@ -275,7 +277,7 @@ global style
  .section-title h2:before {
      content: attr(data-heading);
      display: block;
-     font-size: 16px;
+    font-size: clamp(0.875rem, 3vw, 1rem);
      font-weight: 600;
      color: var(--skin-color);
  }
@@ -462,7 +464,7 @@ Nevigation Menu
  }
  
  .home-section .home-text h2 {
-     font-size: 55px;
+    font-size: clamp(2rem, 8vw, 3.5rem);
      font-weight: 700;
      color: var(--text-black-900);
      margin: 0;
@@ -470,20 +472,24 @@ Nevigation Menu
  }
  
  .home-section .home-text h1 {
-     font-size: 20px;
+    font-size: clamp(1rem, 4vw, 1.25rem);
      font-weight: 500;
      color: var(--text-black-700);
      margin: 0;
      text-transform: capitalize;
  }
  
+.home-section .home-text p {
+    font-size: clamp(1rem, 3vw, 1.125rem);
+}
+
  .home-section .home-text .btn-1 {
      margin-top: 30px;
  }
  
  .home-section .home-img .img-box {
      /*background-color: red;*/
-     max-width: 450px;
+    max-width: min(450px, 80vw);
      display: block;
      margin: auto;
      border-radius: 50%;
@@ -558,7 +564,7 @@ about section
  }
  
  .about-section .about-info p {
-     font-size: 16px;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
      line-height: 26px;
      margin-bottom: 15px;
      color: var(--text-block-600);
@@ -745,7 +751,7 @@ about section
  }
  
  .about-section .timeline .timeline-item-inner h3 {
-     font-size: 26px;
+    font-size: clamp(1.25rem, 4vw, 1.625rem);
      color: var(--bg-black-700);
      font-weight: 600;
      margin: 0 0 5px;

@@ -24,6 +24,38 @@
 function bodyScrollingToggle() {
     document.body.classList.toggle("hidden-scrolling");
 }
+
+/*------hamburger menu toggle */
+(() => {
+    const hamburgerBtn = document.querySelector(".hamburger-btn"),
+        navMenu = document.querySelector(".nav-menu"),
+        closeNavMenu = document.querySelector(".close-nav-menu");
+
+    hamburgerBtn.addEventListener("click", () => {
+        navMenu.style.visibility = "visible";
+        navMenu.style.opacity = "1";
+        navMenu.style.zIndex = "999";
+        bodyScrollingToggle();
+    });
+
+    closeNavMenu.addEventListener("click", () => {
+        navMenu.style.visibility = "hidden";
+        navMenu.style.opacity = "0";
+        navMenu.style.zIndex = "-1";
+        bodyScrollingToggle();
+    });
+
+    // Close menu when clicking on nav links
+    navMenu.addEventListener("click", (event) => {
+        if (event.target.tagName === "A") {
+            navMenu.style.visibility = "hidden";
+            navMenu.style.opacity = "0";
+            navMenu.style.zIndex = "-1";
+            bodyScrollingToggle();
+        }
+    });
+})();
+
 /*------portfolio filter and popup */
 (() => {
     const filterContainer = document.querySelector(".portfolio-filter"),
@@ -170,12 +202,18 @@ function bodyScrollingToggle() {
 
 /*--------------------------testimonial slider ----------------------------------*/
 (() => {
-    const sliderContainer = document.querySelector(".testi-slider-container"),
-        slides = sliderContainer.querySelectorAll(".testi-item"),
+    // Check if testimonial elements exist before initializing
+    const sliderContainer = document.querySelector(".testi-slider-container");
+    if (!sliderContainer) return;
+    
+    const slides = sliderContainer.querySelectorAll(".testi-item"),
         slideWidth = sliderContainer.offsetWidth,
         prevBtn = document.querySelector(".testi-slider-nav .prev"),
         nextBtn = document.querySelector(".testi-slider-nav .next"),
         activeSlide = sliderContainer.querySelector(".testi-item.active");
+    
+    if (!slides.length || !activeSlide) return;
+    
     let slideIndex = Array.from(activeSlide.parentElement.children).indexOf(activeSlide);
 
     // set width of all slides
@@ -185,7 +223,7 @@ function bodyScrollingToggle() {
         //set width of slideContainer
     sliderContainer.style.width = slideWidth * slides.length + "px";
 
-    nextBtn.addEventListener("click", () => {
+    nextBtn && nextBtn.addEventListener("click", () => {
         if (slideIndex === slides.length - 1) {
             slideIndex = 0;
         } else {
@@ -194,7 +232,7 @@ function bodyScrollingToggle() {
         slider();
     })
 
-    prevBtn.addEventListener("click", () => {
+    prevBtn && prevBtn.addEventListener("click", () => {
         if (slideIndex === 0) {
             slideIndex = slides.length - 1;
 
@@ -202,7 +240,6 @@ function bodyScrollingToggle() {
             slideIndex--;
         }
         slider();
-        console.log("Here");
     })
 
     function slider() {
@@ -212,6 +249,16 @@ function bodyScrollingToggle() {
         slides[slideIndex].classList.add("active");
         sliderContainer.style.marginLeft = -(slideWidth * slideIndex) + "px";
     }
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        const newSlideWidth = sliderContainer.offsetWidth;
+        slides.forEach((slide) => {
+            slide.style.width = newSlideWidth + "px";
+        });
+        sliderContainer.style.width = newSlideWidth * slides.length + "px";
+        sliderContainer.style.marginLeft = -(newSlideWidth * slideIndex) + "px";
+    });
 })();
 
 async function submitForm() {
